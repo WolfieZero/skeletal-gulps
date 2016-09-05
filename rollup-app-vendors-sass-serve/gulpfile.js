@@ -4,6 +4,7 @@
 // Tasks:
 // - `default`
 // - `watch`
+// - `serve` - Setup browser-sync
 // - `app` - Compile app source files
 // - `vendor` - Compile vendor files into one file
 // - `sass` - Compiles SCSS to CSS
@@ -103,7 +104,7 @@ const onError = function(error) {
 gulp.task('default', ['app', 'vendors', 'sass']);
 
 
-// Task: `watch` - Watch and process
+// Task: `watch`
 // =============================================================================
 
 gulp.task('watch', ['default'], () => {
