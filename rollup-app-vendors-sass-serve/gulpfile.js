@@ -18,6 +18,7 @@ const gulp = require('gulp');
 const csso = require('gulp-csso');
 const sass = require('gulp-sass');
 const gutil = require('gulp-util');
+const watch = require('gulp-watch');
 const buffer = require('vinyl-buffer');
 const browserSync = require('browser-sync');
 const source = require('vinyl-source-stream');
@@ -55,9 +56,9 @@ try {
 const config = _.merge({
     sourcemaps: true,
 
-    sassSource: './resources/assets/sass',
-    appSource: './resources/assets/app',
-    jsSource: './resources/assets/js',
+    sassSource: './src/sass',
+    appSource: './src/app',
+    jsSource: './src/js',
 
     /**
      * @see  https://www.browsersync.io/docs/options
@@ -122,7 +123,9 @@ gulp.task('watch', ['default'], () => {
             run: ['vendors']
         }
     ]).forEach((task) => {
-        gulp.watch(task.watch, task.run);
+        watch(task.watch, () => {
+            gulp.start(task.run);
+        });
     });
 
     gulp.watch([

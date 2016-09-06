@@ -15,7 +15,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
-    "jquery": "^3.1.0",
+    "gulp-watch": "^4.3.9",
     "lodash": "^4.14.0",
     "restangular": "^1.5.2",
     "rollup-plugin-buble": "^0.13.0",
